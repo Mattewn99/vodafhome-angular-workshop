@@ -1,0 +1,9 @@
+@import "/src/scss/mixins";
+
+.cpu-player {
+  width: 230px;
+
+  @include breakpoint(md) {
+    width: 190px;
+  }
+}

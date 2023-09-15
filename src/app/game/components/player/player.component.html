@@ -1,0 +1,8 @@
+<div class="player">
+  <ng-content></ng-content>
+
+  <app-gesture
+    [gesture]="gesture"
+    *ngIf="gesture !== gestureType.UNKNOWN"
+  ></app-gesture>
+</div>

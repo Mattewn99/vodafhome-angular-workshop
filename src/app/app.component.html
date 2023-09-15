@@ -1,0 +1,28 @@
+<main class="game-wrapper">
+  <div class="container">
+    <img
+      src="/assets/images/develhope-logo.svg"
+      alt="Develhope logo"
+      class="develhope-logo"
+      width="350"
+    />
+
+    <div class="players-wrapper">
+      <div class="player-item">
+        <app-player [gesture]="playerGesture">
+          <video #playerVideo autoplay class="player-video"></video>
+        </app-player>
+      </div>
+
+      <img src="/assets/images/vs.svg" alt="VS Image" class="vs-image" />
+
+      <div class="player-item">
+        <app-player [gesture]="cpuGesture">
+          <app-cpu-player [gameStatus]="gameStatus"></app-cpu-player>
+        </app-player>
+      </div>
+    </div>
+  </div>
+
+  <app-result [status]="gameStatus" *ngIf="gameStatus !== 'idle'"></app-result>
+</main>

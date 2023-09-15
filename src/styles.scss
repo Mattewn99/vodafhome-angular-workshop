@@ -1,0 +1,12 @@
+@import "~normalize.css";
+
+@import "/src/scss/mixins";
+
+.container {
+  width: $lg-container-width;
+  margin: 0 auto;
+
+  @include breakpoint(md) {
+    width: $md-container-width;
+  }
+}

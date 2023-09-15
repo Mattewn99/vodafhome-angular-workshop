@@ -1,0 +1,9 @@
+@import "/src/scss/variables";
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media only screen and (max-width: $lg-container-width) {
+      @content;
+    }
+  }
+}
