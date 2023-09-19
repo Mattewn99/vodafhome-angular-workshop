@@ -15,7 +15,6 @@ import {
 import {
   Gesture,
   GestureType,
-  HornsGesture,
   PaperGesture,
   RockGesture,
   SampleGesture,
@@ -35,7 +34,7 @@ export class PredictionService {
   private gestureEstimator!: GestureEstimator;
 
   public async init(): Promise<void> {
-    const gestures = [PaperGesture, RockGesture, ScissorsGesture, HornsGesture];
+    const gestures = [PaperGesture, RockGesture, ScissorsGesture];
 
     this.gestureEstimator = new GestureEstimator(gestures);
 

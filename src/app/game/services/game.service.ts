@@ -15,7 +15,7 @@ export class GameService {
 
   public getCpuGesture(): GestureType {
     const gestures = GESTURES.filter((gesture) => {
-      const exludedGestures: GestureType[] = [Gesture.UNKNOWN, Gesture.HORNS];
+      const exludedGestures: GestureType[] = [Gesture.UNKNOWN];
 
       return !exludedGestures.includes(gesture);
     });
@@ -29,20 +29,8 @@ export class GameService {
     playerGesture: GestureType,
     cpuGesture: GestureType
   ): GameStatusType {
-    if (playerGesture === Gesture.HORNS) {
-      return GameStatus.METAL;
-    }
-
     if (playerGesture === cpuGesture) {
       return GameStatus.DRAW;
-    }
-
-    if (
-      (playerGesture === Gesture.ROCK && cpuGesture === Gesture.SCISSORS) ||
-      (playerGesture === Gesture.PAPER && cpuGesture === Gesture.ROCK) ||
-      (playerGesture === Gesture.SCISSORS && cpuGesture === Gesture.PAPER)
-    ) {
-      return GameStatus.PLAYER_WINS;
     }
 
     return GameStatus.CPU_WINS;
@@ -57,11 +45,6 @@ export class GameService {
       }
       case GameStatus.CPU_WINS: {
         this.audioService.play(AudioEffect.CPU_WINS);
-        break;
-      }
-      case GameStatus.METAL: {
-        this.audioService.play(AudioEffect.METAL);
-        this.confettiService.blackFireworks();
         break;
       }
       default: {

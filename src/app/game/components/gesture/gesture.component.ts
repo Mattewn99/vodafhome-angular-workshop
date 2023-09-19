@@ -25,7 +25,6 @@ export class GestureComponent implements OnInit {
     [Gesture.ROCK]: '/assets/images/gestures/rock.svg',
     [Gesture.PAPER]: '/assets/images/gestures/paper.svg',
     [Gesture.SCISSORS]: '/assets/images/gestures/scissors.svg',
-    [Gesture.HORNS]: '/assets/images/gestures/horns.svg',
   };
 
   ngOnInit(): void {

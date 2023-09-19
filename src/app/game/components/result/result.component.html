@@ -2,7 +2,6 @@
   <ng-container [ngSwitch]="status">
     <h1 class="result-text" *ngSwitchCase="gameStatus.PLAYER_WINS">You Win! 🥳</h1>
     <h1 class="result-text" *ngSwitchCase="gameStatus.CPU_WINS">You Lose! 😭</h1>
-    <h1 class="result-text" *ngSwitchCase="gameStatus.METAL">Metal!!! 🎸</h1>
     <h1 class="result-text" *ngSwitchDefault>Draw! 😐</h1>
   </ng-container>
 </div>
